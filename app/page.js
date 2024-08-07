@@ -4,6 +4,7 @@ import { firestore } from '@/firebase'
 import { Box, Typography, Modal, TextField, Stack, Button, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material'
 import { collection, doc, getDocs, query, setDoc, deleteDoc, getDoc } from 'firebase/firestore'
 
+// Ensure any code accessing `window` or `document` is only executed on the client side.
 export default function Home() {
   const [inventory, setInventory] = useState([])
   const [filteredInventory, setFilteredInventory] = useState([])
@@ -173,7 +174,7 @@ export default function Home() {
       <Dialog open={showAddDialog} onClose={() => setShowAddDialog(false)}>
         <DialogTitle>Item Not Found</DialogTitle>
         <DialogContent>
-        <Typography>Do you want to add &quot;{itemToAdd}&quot; to the inventory?</Typography>
+          <Typography>Do you want to add &quot;{itemToAdd}&quot; to the inventory?</Typography>
         </DialogContent>
         <DialogActions>
           <Button onClick={() => setShowAddDialog(false)} color="primary">
@@ -188,5 +189,5 @@ export default function Home() {
         </DialogActions>
       </Dialog>
     </Box>
-  );
+  )
 }
