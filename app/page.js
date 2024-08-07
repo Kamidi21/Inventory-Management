@@ -173,7 +173,7 @@ export default function Home() {
       <Dialog open={showAddDialog} onClose={() => setShowAddDialog(false)}>
         <DialogTitle>Item Not Found</DialogTitle>
         <DialogContent>
-        <Typography>Do you want to add "{itemToAdd}" to the inventory?</Typography>
+        <Typography>This is a &quot;quote&quot; inside a string</Typography>
         </DialogContent>
         <DialogActions>
           <Button onClick={() => setShowAddDialog(false)} color="primary">
